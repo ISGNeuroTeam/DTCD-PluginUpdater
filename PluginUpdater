@@ -1,0 +1,109 @@
+#!/bin/bash
+
+usage() {
+  cat <<EOF
+Usage:  $(basename "${BASH_SOURCE[0]}") -h
+        $(basename "${BASH_SOURCE[0]}") -d "path/to/target-directory"
+        $(basename "${BASH_SOURCE[0]}") --json "path/to/repository-list.json"
+
+Available options:
+
+  -h, --help        Print this help and exit
+  -d, --directory   Target directory
+  --json            JSON file with a list of repositories
+EOF
+  exit
+}
+
+parse_params() {
+  SOURCE_FILE='projects.json'
+
+  while :; do
+    case "${1-}" in
+      -h | --help)
+        usage ;;
+      -d | --directory)
+        DIRECTORY_VALUE=${2-}
+        shift
+        ;;
+      --json)
+        SOURCE_FILE=${2-}
+        shift
+        ;;
+      -?*) die "Unknown option: $1" ;;
+      *) break ;;
+    esac
+    shift
+  done
+
+  # проверяем параметры и аргументы скрипта
+  [[ -z "${DIRECTORY_VALUE}" ]] && { echo "Missing required parameter: -d or --directory"; exit 1; }
+  if [[ -d ${DIRECTORY_VALUE} ]]
+    then
+      TARGET_DIRECTORY="$(cd "$(dirname "${DIRECTORY_VALUE-}")"; pwd)/$(basename "${DIRECTORY_VALUE-}")/"
+    else
+      { echo "Target directory not found."; exit 1; }
+  fi
+
+  [[ -r ${SOURCE_FILE} ]] || { echo "JSON file with a list of repositories not found."; exit 1; }
+
+  return 0
+}
+
+update_repo () {
+  echo "";
+  echo "REPOSITORY: $1 ; BRANCH: $2";
+  cd "$TARGET_DIRECTORY$1" || { echo "No such directory: $TARGET_DIRECTORY$1"; return 1; };
+  git checkout "$2";
+  git pull;
+  make build;
+  return 0;
+}
+
+clone_repo () {
+  echo "";
+  echo "REPOSITORY: $1 ; BRANCH: $2";
+  cd "$TARGET_DIRECTORY" || { echo "No such directory: $TARGET_DIRECTORY"; return 1; };
+  gh repo clone "ISGNeuroTeam/$1";
+  cd "$TARGET_DIRECTORY$1" || { echo "No such directory: $TARGET_DIRECTORY$1"; return 1; };
+  git checkout "$2";
+  make build;
+  return 0;
+}
+
+parse_params "$@"
+
+# получаем список репозиториев
+declare -a ARR_REPOS
+JSON_REPO=$(grep -o '"repository": "[^"]*' "$SOURCE_FILE" | grep -o '[^"]*$')
+index=0
+for repo in $JSON_REPO
+do
+  ARR_REPOS[$index]=$repo
+  index=$((index + 1))
+done
+
+# получаем ветки
+declare -a ARR_BRANCHES
+JSON_BRANCHES=$(grep -o '"branch": "[^"]*' "$SOURCE_FILE" | grep -o '[^"]*$')
+index=0
+for branch in $JSON_BRANCHES
+do
+  ARR_BRANCHES[$index]=$branch
+  index=$((index + 1))
+done
+
+# проходим по списку репозиториев
+for (( index=0; index < ${#ARR_REPOS[*]}; index++ ))
+do
+  # проверяем, есть ли проект в целевой директории
+  if [ -d "$TARGET_DIRECTORY${ARR_REPOS[$index]}" ]
+    then
+      update_repo "${ARR_REPOS[$index]}" "${ARR_BRANCHES[$index]}"
+    else
+      clone_repo "${ARR_REPOS[$index]}" "${ARR_BRANCHES[$index]}"
+  fi
+done
+echo ""
+echo "$(basename "${BASH_SOURCE[0]}") completed successfully!"
+exit 0

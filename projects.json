@@ -1,0 +1,166 @@
+[
+  {
+    "repository": "DTCD",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-AppGUISystem",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-AuditPanel",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-AuthPanel",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-AuthSystem",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-ButtonPanel",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-ConfigEditorPanel",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-DatasourcePanel",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-DatasourceSystem",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-DevPanel",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-DevPanel-Console",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-EventSystem",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-EventSystemPanel",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-ExtensionCommonPrimitives",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-ExtensionComplexPrimitives",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-ExtensionLogicalPrimitives",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-ExternalDatasource-OTL",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-FooterPanel",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-HeaderPanel",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-InteractionSystem",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-LiveDashArrangementPanel",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-LiveDashControlPanel",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-LiveDashPanel",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-LogSystem",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-MenuPanel",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-MenuPanel-FGK",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-PrimitiveLibraryPanel",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-PrimitivePropertiesPanel",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-PrimitiveStylePanel",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-ProfilePanel",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-RouteSystem",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-StorageSystem",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-StyleSystem",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-Visualization-BarChart",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-Visualization-FGK-RiskReview",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-Visualization-Gauge",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-Visualization-List",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-Visualization-Table",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-Visualization-Text",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-WorkspacePanel",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-WorkspaceSystem",
+    "branch": "develop"
+  }
+]
