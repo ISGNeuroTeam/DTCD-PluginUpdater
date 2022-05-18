@@ -8,10 +8,6 @@
     "branch": "develop"
   },
   {
-    "repository": "DTCD-AuditPanel",
-    "branch": "develop"
-  },
-  {
     "repository": "DTCD-AuthPanel",
     "branch": "develop"
   },
@@ -32,15 +28,11 @@
     "branch": "develop"
   },
   {
-    "repository": "DTCD-DatasourceSystem",
+    "repository": "DTCD-DataSourceSystem",
     "branch": "develop"
   },
   {
-    "repository": "DTCD-DevPanel",
-    "branch": "develop"
-  },
-  {
-    "repository": "DTCD-DevPanel-Console",
+    "repository": "DTCD-ExternalDataSource-OTL",
     "branch": "develop"
   },
   {
@@ -56,11 +48,7 @@
     "branch": "develop"
   },
   {
-    "repository": "DTCD-ExtensionComplexPrimitives",
-    "branch": "develop"
-  },
-  {
-    "repository": "DTCD-ExtensionLogicalPrimitives",
+    "repository": "DTCD-ExtensionElectricalSchemePrimitives",
     "branch": "develop"
   },
   {
@@ -80,10 +68,6 @@
     "branch": "develop"
   },
   {
-    "repository": "DTCD-LiveDashArrangementPanel",
-    "branch": "develop"
-  },
-  {
     "repository": "DTCD-LiveDashControlPanel",
     "branch": "develop"
   },
@@ -96,23 +80,11 @@
     "branch": "develop"
   },
   {
-    "repository": "DTCD-MenuPanel",
-    "branch": "develop"
-  },
-  {
-    "repository": "DTCD-MenuPanel-FGK",
-    "branch": "develop"
-  },
-  {
     "repository": "DTCD-PrimitiveLibraryPanel",
     "branch": "develop"
   },
   {
     "repository": "DTCD-PrimitivePropertiesPanel",
-    "branch": "develop"
-  },
-  {
-    "repository": "DTCD-PrimitiveStylePanel",
     "branch": "develop"
   },
   {

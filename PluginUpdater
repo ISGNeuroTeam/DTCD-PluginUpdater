@@ -57,6 +57,7 @@ update_repo () {
   git checkout "$2";
   git pull;
   make build;
+  cp -r ./build/$1* ./../DTCD/server/plugins
   return 0;
 }
 
