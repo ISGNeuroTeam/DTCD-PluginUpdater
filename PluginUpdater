@@ -57,7 +57,10 @@ update_repo () {
   git checkout "$2";
   git pull;
   make build;
-  cp -r ./build/$1* ./../DTCD/server/plugins
+  if [ $1 != 'DTCD' ]
+  then 
+    cp -r ./build/$1* ./../DTCD/server/plugins
+  fi
   return 0;
 }
 
@@ -69,6 +72,10 @@ clone_repo () {
   cd "$TARGET_DIRECTORY$1" || { echo "No such directory: $TARGET_DIRECTORY$1"; return 1; };
   git checkout "$2";
   make build;
+  if [ $1 != 'DTCD' ]
+  then 
+    cp -r ./build/$1* ./../DTCD/server/plugins
+  fi
   return 0;
 }
 
