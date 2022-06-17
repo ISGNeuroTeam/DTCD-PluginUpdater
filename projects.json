@@ -48,6 +48,10 @@
     "branch": "develop"
   },
   {
+    "repository": "DTCD-ExtensionRiskPrimitives",
+    "branch": "develop"
+  },
+  {
     "repository": "DTCD-ExtensionElectricalSchemePrimitives",
     "branch": "develop"
   },
