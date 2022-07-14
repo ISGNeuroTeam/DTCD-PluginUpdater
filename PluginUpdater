@@ -56,6 +56,7 @@ update_repo () {
   cd "$TARGET_DIRECTORY$1" || { echo "No such directory: $TARGET_DIRECTORY$1"; return 1; };
   git checkout "$2";
   git pull;
+  make clean;
   make build;
   if [ $1 != 'DTCD' ]
   then 
@@ -68,7 +69,8 @@ clone_repo () {
   echo "";
   echo "REPOSITORY: $1 ; BRANCH: $2";
   cd "$TARGET_DIRECTORY" || { echo "No such directory: $TARGET_DIRECTORY"; return 1; };
-  gh repo clone "ISGNeuroTeam/$1";
+  # gh repo clone "ISGNeuroTeam/$1";
+  git clone "git@github.com:ISGNeuroTeam/$1";
   cd "$TARGET_DIRECTORY$1" || { echo "No such directory: $TARGET_DIRECTORY$1"; return 1; };
   git checkout "$2";
   make build;
