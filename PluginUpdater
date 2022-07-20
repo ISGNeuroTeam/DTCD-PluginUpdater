@@ -50,6 +50,28 @@ parse_params() {
   return 0
 }
 
+copy_sdk () {
+  if [ "$1" != 'DTCD' ]
+  then
+    if [ -d "$SDK_DIR" ]
+    then
+      echo "Copying SDK from '$SDK_DIR'.";
+      cp -r "$SDK_DIR" "$TARGET_DIRECTORY$1";
+    fi
+  fi
+  return 0;
+}
+
+copy_build_to_dtcd () {
+  if [ "$1" != 'DTCD' ]
+  then
+    [ -d "$TARGET_DIRECTORY$1/DTCD-SDK" ] && SDK_DIR="$(cd "$(dirname "$TARGET_DIRECTORY$1/DTCD-SDK")"; pwd)/$(basename "$TARGET_DIRECTORY$1/DTCD-SDK")/";
+    echo "Copying build of '$1' to 'DTCD/server/plugins'";
+    cp -r ./build/"$1"* ./../DTCD/server/plugins
+  fi
+  return 0;
+}
+
 update_repo () {
   echo "";
   echo "REPOSITORY: $1 ; BRANCH: $2";
@@ -57,11 +79,9 @@ update_repo () {
   git checkout "$2";
   git pull;
   make clean;
+  copy_sdk "$1";
   make build;
-  if [ $1 != 'DTCD' ]
-  then 
-    cp -r ./build/$1* ./../DTCD/server/plugins
-  fi
+  copy_build_to_dtcd "$1";
   return 0;
 }
 
@@ -73,11 +93,9 @@ clone_repo () {
   git clone "git@github.com:ISGNeuroTeam/$1";
   cd "$TARGET_DIRECTORY$1" || { echo "No such directory: $TARGET_DIRECTORY$1"; return 1; };
   git checkout "$2";
+  copy_sdk "$1";
   make build;
-  if [ $1 != 'DTCD' ]
-  then 
-    cp -r ./build/$1* ./../DTCD/server/plugins
-  fi
+  copy_build_to_dtcd "$1";
   return 0;
 }
 
