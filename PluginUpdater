@@ -65,7 +65,10 @@ copy_sdk () {
 copy_build_to_dtcd () {
   if [ "$1" != 'DTCD' ]
   then
-    [ -d "$TARGET_DIRECTORY$1/DTCD-SDK" ] && SDK_DIR="$(cd "$(dirname "$TARGET_DIRECTORY$1/DTCD-SDK")"; pwd)/$(basename "$TARGET_DIRECTORY$1/DTCD-SDK")/";
+    if [ -d "$TARGET_DIRECTORY$1/DTCD-SDK" ]
+    then
+      SDK_DIR="$(cd "$(dirname "$TARGET_DIRECTORY$1/DTCD-SDK")"; pwd)/$(basename "$TARGET_DIRECTORY$1/DTCD-SDK")";
+    fi
     echo "Copying build of '$1' to 'DTCD/server/plugins'";
     cp -r ./build/"$1"* ./../DTCD/server/plugins
   fi
