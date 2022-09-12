@@ -56,6 +56,14 @@
     "branch": "develop"
   },
   {
+    "repository": "DTCD-ExtensioLogicalPrimitives",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-GraphStructurePanel",
+    "branch": "develop"
+  },
+  {
     "repository": "DTCD-ExternalDatasource-OTL",
     "branch": "develop"
   },
@@ -129,6 +137,10 @@
   },
   {
     "repository": "DTCD-Visualization-Text",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-Visualization-PieChart",
     "branch": "develop"
   },
   {
