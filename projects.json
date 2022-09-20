@@ -92,6 +92,14 @@
     "branch": "develop"
   },
   {
+    "repository": "DTCD-NotificationPanel",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-NotificationSystem",
+    "branch": "develop"
+  },
+  {
     "repository": "DTCD-PrimitiveLibraryPanel",
     "branch": "develop"
   },

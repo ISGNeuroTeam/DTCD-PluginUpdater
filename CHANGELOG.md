@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [UNRELEASED]
 
+### Added
+
+- new repositories: DTCD-NotificationPanel, DTCD-NotificationSystem
+
 ### Changed
 
 - disabled copying DTCD-SDK
