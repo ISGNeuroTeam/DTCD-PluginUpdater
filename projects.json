@@ -116,6 +116,10 @@
     "branch": "develop"
   },
   {
+    "repository": "DTCD-SelectPanel",
+    "branch": "develop"
+  },
+  {
     "repository": "DTCD-StorageSystem",
     "branch": "develop"
   },
@@ -124,7 +128,19 @@
     "branch": "develop"
   },
   {
+    "repository": "DTCD-SVGPanel",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-Visualization-Accumulators",
+    "branch": "develop"
+  },
+  {
     "repository": "DTCD-Visualization-BarChart",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-Visualization-Chart",
     "branch": "develop"
   },
   {
@@ -140,15 +156,19 @@
     "branch": "develop"
   },
   {
+    "repository": "DTCD-Visualization-Metrics",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-Visualization-PieChart",
+    "branch": "develop"
+  },
+  {
     "repository": "DTCD-Visualization-Table",
     "branch": "develop"
   },
   {
     "repository": "DTCD-Visualization-Text",
-    "branch": "develop"
-  },
-  {
-    "repository": "DTCD-Visualization-PieChart",
     "branch": "develop"
   },
   {
