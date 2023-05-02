@@ -36,6 +36,10 @@
     "branch": "develop"
   },
   {
+    "repository": "DTCD-ExternalDataSource-OTLRW",
+    "branch": "develop"
+  },
+  {
     "repository": "DTCD-EventSystem",
     "branch": "develop"
   },
@@ -56,7 +60,11 @@
     "branch": "develop"
   },
   {
-    "repository": "DTCD-ExtensioLogicalPrimitives",
+    "repository": "DTCD-ExtensionLogicalPrimitives",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-ExtensionOilPrimitives",
     "branch": "develop"
   },
   {
@@ -141,6 +149,10 @@
   },
   {
     "repository": "DTCD-Visualization-Chart",
+    "branch": "develop"
+  },
+  {
+    "repository": "DTCD-Visualization-EditableTable",
     "branch": "develop"
   },
   {
